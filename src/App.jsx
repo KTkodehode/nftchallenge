@@ -7,29 +7,40 @@ import Equilibrium from "./images/image-equilibrium.jpg";
 import EtherumView from "./images/icon-ethereum.svg";
 import Clock from "./images/icon-clock.svg";
 import Avatar from "./images/image-avatar.png";
-import EtheriumView from "./images/icon-view.svg";
+import EquiHover from "./images/icon-view.svg";
 
 function App() {
   const [isHovered, setHovered] = useState(false);
   return (
     <>
       <div className="App flex justify-center absolute top-[50%] right-[50%] translate-x-[50%] -translate-y-[50%]">
-        <div className="card xl:w-[400px] w-80 bg-[#14253d] shadow-xl p-6">
-          <div>
-            <img
-              src={Equilibrium}
-              onMouseEnter={() => setHovered(true)}
-              onMouseLeave={() => setHovered(false)}
-              className="rounded-xl w-[350px] m-auto"
-            />
-            {isHovered ? (
-              <img
-                src={EtheriumView}
-                className="translate-x-[110px] -translate-y-[160px] xl:-translate-y-[200px] xl:translate-x-[153px] fixed hover:text-[#00FFFF]"
-              />
-            ) : null}
+        <div className="card w-80 xl:w-[400px] p-6 bg-[#14253d]">
+          <div
+            onMouseEnter={() => setHovered(true)}
+            onMouseLeave={() => setHovered(false)}
+          >
+            <img src={Equilibrium} className="rounded-xl w-[350px] m-auto" />
+            {isHovered && (
+              <div className="z-50 bg-[#00FFFF] bg-opacity-50 absolute w-[350px] h-[350px] xl:-translate-y-[348px]  rounded-xl">
+                <img
+                  src={EquiHover}
+                  className="xl:translate-x-[155px] xl:translate-y-[145px]"
+                />
+              </div>
+            )}
           </div>
-          <div className="text-[#FFFFFF] h-[250px] xl:h-[300px]">
+          {/* Outer Shadow */}
+          <div className="absolute -z-50">
+            <div className="fixed p-14 ml-4">
+              <div
+                className="fixed m-auto h-[38rem] xl:h-[50rem] w-[110%] xl:w-[130%] -translate-y-24 xl:-translate-y-32 -translate-x-28 
+              xl:-translate-x-[160px]bg-[#14253d] rounded-2xl opacity-5"
+              ></div>
+              <div className="fixed w-20 xl:w-[115%] h-72 xl:h-[48rem] -translate-y-28 xl:-translate-y-28 -translate-x-32 xl:-translate-x-26 m-auto bg-[#091321] rounded-2xl opacity-0 xl:opacity-20"></div>
+            </div>
+          </div>
+          {/*  */}
+          <div className="h-[250px] xl:h-[300px] text-[#FFFFFF]">
             <div className="card-body">
               <h2 className="big-text card-title text-2xl hover:text-[#00FFFF] -translate-x-8 tracking-wide">
                 Equilibrium #3492
@@ -45,9 +56,9 @@ function App() {
                 <div className="flex translate-x-16">
                   <img
                     src={Clock}
-                    className="w-[20px] h-[20px] translate-y-1"
+                    className="w-[20px] h-[20px] translate-y-1 translate-x-1 xl:translate-x-2"
                   />
-                  <p className="ml-2 xl:ml-4 text-[#8bacda] medium-text tracking-wide text-[17px] xl:text-xl">
+                  <p className="medium-text ml-2 xl:ml-4 text-[#8bacda] tracking-wide text-[17px] xl:text-xl">
                     3 days left
                   </p>
                 </div>
@@ -58,10 +69,14 @@ function App() {
               <div className="flex -mt-10">
                 <img
                   src={Avatar}
-                  className="w-10 h-10 xl:h-12 xl:w-12 xl:mt-6 -translate-x-8 translate-y-[53px] border-solid border-2 rounded-[100%] border-white xl:translate-y-[30px]"
+                  className="w-10 h-10 xl:h-12 xl:w-12 xl:mt-6 -translate-x-8 translate-y-[53px] border-solid 
+                  border-2 rounded-[100%] border-white xl:translate-y-[30px]"
                 />
                 <div className="flex items-center xl:text-[18px]">
-                  <p className="absolute right-[165px] bottom-[30px] text-[#8bacda] font-light medium-text tracking-wide xl:text-xl xl:bottom-[58px] xl:right-[220px]">
+                  <p
+                    className="medium-text absolute right-[165px] bottom-[30px] text-[#8bacda] font-light tracking-wide xl:text-xl 
+                  xl:bottom-[58px] xl:right-[220px]"
+                  >
                     Creation of
                   </p>
                   <div className="hover:text-[#00FFFF] absolute right-[63px] bottom-[30px] xl:bottom-[58px] xl:right-[108px]">

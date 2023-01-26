@@ -8,7 +8,7 @@
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
-  height: 110vh;
+  height: 100vh;
 }
 body {
   background-color: #0d192b;
@@ -24,4 +24,20 @@ body {
 .small-text {
   font-family: "Barlow Semi Condensed";
   font-weight: 300;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: red;
+  transition: all 0.3s ease-in-out;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.overlay-active {
+  visibility: visible;
+  opacity: 1;
 }
