@@ -21,7 +21,7 @@ function App() {
           >
             <img src={Equilibrium} className="rounded-xl w-[350px] m-auto" />
             {isHovered && (
-              <div className="z-50 bg-[#00FFFF] bg-opacity-50 absolute w-[350px] h-[350px] xl:-translate-y-[348px]  rounded-xl">
+              <div className="z-50 bg-[#00FFFF] bg-opacity-50 absolute w-[350px] h-[350px] -translate-y-[348px] rounded-xl">
                 <img
                   src={EquiHover}
                   className="xl:translate-x-[155px] xl:translate-y-[145px]"
